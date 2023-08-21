@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './Searchbar.css';
 
-const Searchbar = ({placeholder, data}) => {
+const Searchbar = ({placeholder, data, setCompany}) => {
     const [ dataFilter, setDataFilter ] = useState([]);
     const [ search, setSearch ] = useState('');
 
@@ -31,6 +31,11 @@ const Searchbar = ({placeholder, data}) => {
         console.log(newFilter);
     }
 
+    const handleGetCompany = (value) => { 
+        handleClear();
+        setCompany(value);
+    }
+
     const handleKeyPress = (e) => { 
         const keyPressed = e.key; 
         if (keyPressed === "Enter" ) {
@@ -40,11 +45,6 @@ const Searchbar = ({placeholder, data}) => {
         }
     }
 
-    const handleAdd = () => { 
-        console.log("here!");
-        return <Link to="/companies/new" state={search} />
-    }
-
     const handleClear = () => { 
         setDataFilter([]);
         setSearch('')
@@ -52,8 +52,8 @@ const Searchbar = ({placeholder, data}) => {
 
   return (
     <div className="company-content">
-        <aside className="search-col">
-            <div className="search">
+        <aside className="search-col col">
+            <div className="search searchBarLeft">
                 <div className="searchInput">
                     <input type='text'
                         name='company'
@@ -67,9 +67,9 @@ const Searchbar = ({placeholder, data}) => {
                             <io.IoSearchOutline size={"30"} />
                         ) : (
                             dataFilter.length === 0 ? (    
-                                <Link to="new"><io.IoAdd size={"30"} /></Link>    
+                                <io.IoAdd color='white' />   
                             ) : (
-                                <Link className=":id/company"><io.IoInformation size={"30"} /></Link>    
+                                <io.IoInformation onClick={() => handleGetCompany(dataFilter)} />   
                             )
                         )}
                     </div>    
@@ -77,9 +77,8 @@ const Searchbar = ({placeholder, data}) => {
                     <div className="dataResult">
                         {dataFilter.map((value, key) => {
                             return <a key={value.id} 
-                                      href={"#"} 
                                       className='dataItem' 
-                                      onClick={() => handleSelected(value)}
+                                      onClick={() => handleGetCompany(value)}
                                     >
                                         <p >{value.Name}</p>
                                     </a>

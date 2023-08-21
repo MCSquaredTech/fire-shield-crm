@@ -1,8 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
-.searchInputs {
-    margin-top: 105px;
-    display: flex;
+.searchInput {
     background-color: #222;
     color: #eee;
   }
@@ -16,7 +14,7 @@
     font-size: 18px;
     padding: 15px;
     height: 40px;
-    width: 275px;
+    width: calc(17 * 1rem);
     background: #777;
     color: #eee;
   }
@@ -33,6 +31,11 @@
     color: #eee;
     display: grid;
     /* place-items: end; */
+  }
+
+  .searchIcon Link { 
+    text-decoration: none;
+    color: #eee;
   }
   
   input:focus {
@@ -79,4 +82,10 @@
   
   #cursorPointer {
     cursor: pointer;
+  }
+
+  .searchBarLeft {
+    display: flex;
+    justify-content: start ;
+    align-items: start;
   }
