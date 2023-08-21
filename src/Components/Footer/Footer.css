@@ -1,0 +1,8 @@
+.footer {
+    height: 30px;
+    flex-shrink: 0;
+    line-height: 30px;
+    padding: 0 8px;
+    bottom: 0;
+    text-align: center;
+  }

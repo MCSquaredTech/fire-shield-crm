@@ -1,0 +1,22 @@
+@import '~bootstrap/dist/css/bootstrap.css'; 
+
+* { 
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+}
+
+.header {
+    background-color: #222;
+    color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 3rem;
+    width: 100vw;
+    height: 75px; 
+    bottom: 0;
+  }
