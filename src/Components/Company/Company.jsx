@@ -6,8 +6,8 @@ import {useState} from 'react';
 
 const Company = ({company}) => {
 const [showForm, setShowForm] = useState(false);
-const { Name } = company;
-console.log(company, {Name});
+const { Name, Sector, Relationship, Phone, Fax, URL, id } = company;
+console.log(company, Name);
   
 // name
 // sector

@@ -33,7 +33,7 @@ const Searchbar = ({placeholder, data, setCompany}) => {
 
     const handleGetCompany = (value) => { 
         handleClear();
-        setCompany(value);
+        setCompany(value[0]);
     }
 
     const handleKeyPress = (e) => { 
@@ -69,7 +69,7 @@ const Searchbar = ({placeholder, data, setCompany}) => {
                             dataFilter.length === 0 ? (    
                                 <io.IoAdd color='white' />   
                             ) : (
-                                <io.IoInformation onClick={() => handleGetCompany(dataFilter)} />   
+                                <io.IoInformation onClick={() => handleGetCompany(dataFilter[0])} />   
                             )
                         )}
                     </div>    
